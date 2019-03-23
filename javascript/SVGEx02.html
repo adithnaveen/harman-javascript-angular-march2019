@@ -1,0 +1,123 @@
+<html>
+
+<head>
+    <script type="text/javascript">
+    // to show pixel position 
+        document.onclick = function(event){
+            console.log("x position " + event.clientX +", y position " + event.clientY); 
+        }
+
+        function makeDraggable(evt){
+            console.log(evt); 
+
+             svg = evt.target; 
+
+            /// when we say draggable it is mousedown, mousemove, mouseup 
+
+            svg.addEventListener('mousedown', startDrag, true); 
+            svg.addEventListener('mousemove', drag, true); 
+            svg.addEventListener('mouseup', endDrag, true); 
+
+        }
+
+        
+        function getMousePostion(evt){
+                var pos = svg.getScreenCTM(); 
+
+                console.log(pos); 
+                return {
+                    x: (evt.clientX - pos.e) / pos.a, 
+                    y: (evt.clientY - pos.f) / pos.b 
+                }; 
+            }
+
+
+        var selectedElement, offset, transform; 
+
+        function startDrag(evt){
+            console.log(evt.target.classList); 
+            // if(evt.target.classList.contains('contains')){
+
+                selectedElement = evt.target; 
+
+                var transform = selectedElement.transform.baseVal; 
+
+                console.log(transform); 
+                 if(transform.length ===0){
+                    var translate = svg.createSVGTransform(); 
+                    translate.setTranslate(0,0); 
+                    selectedElement.transform.baseVal.insertItemBefore(translate, 0); 
+                 }
+
+            // }
+        }
+
+        function drag(evt){
+            var left=193; 
+            var right=504; 
+            var top=66; 
+            var bottom=386; 
+
+            if(selectedElement){
+                var coord = getMousePostion(evt); 
+
+                coord.x < left ? coord.x = left :coord.x > right? coord.x = right: coord.x; 
+
+                if(coord.y< top){
+                    coord.y = top; 
+                }else if(coord.y > bottom){
+                    coord.y = bottom;
+                }
+
+              //  transform.setTranslate(coord.x - offset.x, coord.y - offset.y); 
+            }
+
+        }
+
+        function endDrag(evt){
+            selectedElement = false; 
+        }
+
+    </script>
+
+    <style type="text/css">
+        #singleRectangle:hover{
+            fill: blue; 
+        }
+    </style>
+
+</head>
+
+<body>
+    
+        <svg width="640" height="480" 
+            xmlns="http://www.w3.org/2000/svg" 
+            xmlns:svg="http://www.w3.org/2000/svg" 
+                onload="makeDraggable(evt)">
+
+            <g class="layer">
+             <title>Layer 1</title>
+             
+             
+             <rect fill="none" height="322" id="outerRectangle" 
+             stroke="#000000" stroke-dasharray="null" 
+             stroke-linecap="null" stroke-linejoin="null" 
+             stroke-width="3" width="409" x="86.5" y="58"/>
+             
+             <line fill="none" id="svg_2" stroke="#000000" stroke-dasharray="null" stroke-linecap="null" stroke-linejoin="null" stroke-width="2" x1="184.5" x2="184.5" y1="58" y2="378"/>
+             
+             
+             <rect fill="none" height="41" id="singleRectangle" 
+             stroke="#000000" stroke-dasharray="null" draggable="true"
+             stroke-linecap="null" stroke-linejoin="null" 
+             stroke-width="3" width="19" x="107.5" y="116"/>
+
+                <g>
+                <rect fill="none" height="35" id="leftRectangle" stroke="#000000" stroke-dasharray="null" stroke-linecap="null" stroke-linejoin="null" stroke-width="3" width="9" x="110.5" y="204"/>
+                <rect fill="none" height="34" id="rightRectangle" stroke="#000000" stroke-dasharray="null" stroke-linecap="null" stroke-linejoin="null" stroke-width="3" width="8" x="124.5" y="204"/>
+                </g>
+            </g>
+           </svg>
+</body>
+
+</html>

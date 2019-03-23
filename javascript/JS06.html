@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript">
+        function callMe(){
+            obj = new Object; 
+            obj.first = 100; 
+            obj.second = 200; 
+
+            console.log("First " + obj.first); 
+            console.log("Second " + obj.second); 
+
+            console.log("thrid " + obj.third); 
+        }
+    </script>
+</head>
+<body>
+    <script type="text/javascript">
+        callMe(); 
+        console.log("outside " + obj.first); 
+    </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript">
+        function fnSetCookie(){
+            console.log(document.myForm.uname.value); 
+            name = document.myForm.uname.value; 
+
+            dt = new Date(); 
+            // 1 day 
+            dt.setDate(dt + 1); 
+
+            document.cookie = "uname="+escape(name)+";expires="+ dt.toGMTString();
+            alert("Cookie Saved"); 
+        }
+
+        function checkCookie(){
+            userName = getCookie("uname"); 
+
+            if(userName!=null && userName!=""){
+                document.myForm.uname.value = userName; 
+            }
+        }
+
+        function getCookie(uname){
+            console.log(document.cookie.length); 
+
+            if(document.cookie.length>0){
+                startIndex = document.cookie.indexOf(uname); 
+
+                if(startIndex != -1){
+                    startIndex = startIndex + (uname.length+1); 
+                    endIndex = document.cookie.indexOf(";", startIndex); 
+                }
+
+                // if cookie is the last value set 
+                if(endIndex ==-1){
+                    endIndex = document.cookie.length; 
+                }
+                return document.cookie.substr(startIndex, endIndex); 
+            }
+        }
+    </script>
+</head>
+<body onload="checkCookie()">
+    <form name="myForm">
+        Enter Your Name <input type="text" name="uname" />
+        <br > 
+        <input type="reset" />
+        <input type="button" onclick="fnSetCookie();" value="Set Cookie" />
+    </form>
+</body>
+</html>

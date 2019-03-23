@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+    <h2 align="center">Registration Form </h2>  
+    <form name="regForm" onsubmit="javascript:customfunction()" 
+    action="Sample.do" >
+    <table border="2">
+        <tr>
+            <td>Enter First Name </td>
+            <td><input type="text" name="fName" /> </td>
+        </tr>
+        <tr>
+            <td>Enter Last Name</td>
+            <td><input type="text" name="lname" /> </td>
+        </tr>
+        <tr>
+            <td>Highest Qualification </td>
+            <td>
+                <select name="qualification">
+                    <option>M.Tech</option>
+                    <option value="bcom">B.Com</option>
+                    <option value="be">Bachelor Of Engineering</option>
+                    <option value="me">Master of Engineering</option>
+                </select>
+
+            </td>
+        </tr>
+        <tr>
+            <td>Select Your Sex </td>
+            <td>
+                <input type="radio" value="male" name="sex" /> Male | 
+                <input type="radio" value="female" name="sex" /> Female| 
+                <input type="radio" value="trans" name="sex" /> Trans Gender  
+            </td>
+        </tr>
+        <tr>
+            <td>Your Interest </td>
+            <td>
+                
+                <input type="checkbox" value="sports" name="interest" />  Sports  |
+                <input type="checkbox" value="news" name="interest" />  NEWS   |
+                <input type="checkbox" value="politics" name="interest" />  Politics |
+                <input type="checkbox" value="others" name="interest" />  Others  |
+
+            
+            </td>
+        </tr>
+        <tr>
+            <td>Upload Your Profile </td>
+            <td>
+                <input type="file" name="profile" /> 
+
+            </td>
+        </tr>
+        <tr>
+            <td>About You</td>
+            <td>
+                <textarea rows="4" cols="60">
+                    Your Text Goes Here 
+                </textarea>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="reset">
+            </td>
+            <td>
+                <input type="submit">
+                <button onclick="callmyfunction()"></button>
+            </td>
+        </tr>
+    </table>
+    </form>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript">
+        str = "Technologies"; 
+        function f1(){
+
+        console.log(str); 
+        console.log("<br> Length of the String " + str.length); 
+        console.log("<br> To lower case "+ str.toLowerCase()); 
+        console.log("br > To upper case " + str.toUpperCase()); 
+
+        console.log("<br > to check o presence -> " + str.indexOf('o')); 
+        console.log("<br > to check o from last index " + str.lastIndexOf('o')); 
+
+        console.log("<br > substring  " + str.substring(3, 5)); 
+        console.log("<br > substr " + str.substr(3,5)); 
+
+        document.write("hello".bold()); 
+        document.write("hello".italics()); 
+
+        document.write("yahoo".link("https://www.yahoo.com")); 
+        }
+
+        function fnRegExp(){
+            var x = /ll/; 
+            var regexp = new RegExp("ll"); 
+
+            var str = "hello"; 
+            document.write(str.match(x)); 
+
+            document.write("<br /> " + str.match(regexp)); 
+
+            var octNumber = "056789"; 
+
+            document.write("<br >" + octNumber.match(/0[0-7]/)); 
+            document.write("<br >" + octNumber.match(/0[0-7]+/)); 
+
+            document.write("<br>"); 
+
+            var ipaddress ="192.168.123.1"; 
+            var validatedIpAddress = ipaddress.match(/\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}/); 
+
+            if(ipaddress == validatedIpAddress){
+                document.write("You Entered Valid Ip Address "); 
+            }else {
+                document.write("Sorry invalid IP address ")
+            
+            }
+        }
+
+
+    </script>
+</head>
+<body>
+    <button onclick="fnRegExp()">Click Me</button>
+</body>
+</html>

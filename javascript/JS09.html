@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body bgcolor="cyan" padding="5px">
+    <p>This is first Para</p>
+    <p>Hello World!</p>
+    <p>This is another para </p>
+
+
+    <script type="text/javascript">  
+        var previousColor =""; 
+        function fnAccessValues(){
+            var x = document.getElementsByTagName('p')[0].firstChild; 
+            console.log(document.getElementsByTagName('p')); 
+            console.log(document.getElementsByTagName('p')[0])
+            console.log(x); 
+            console.log(x.nodeValue); 
+
+            var y = document.getElementsByTagName('p')[1].firstChild; 
+            console.log(y.nodeValue); 
+        
+          //  console.log(document.getElementsByTagName('script')[0].firstChild)
+        }
+
+        function fnGetAttributes(){
+            var x = document.body; 
+
+            console.log(x.attributes.length); 
+
+            for(i=0; i<x.attributes.length; i++){
+                console.log("Attribute Name " + x.attributes[i].nodeName); 
+                console.log("Attribute Value  " + x.attributes[i].nodeValue); 
+                
+            }
+
+        }
+        
+        function changeBGColor(color){
+            previousColor = document.body.getAttribute("bgcolor"); 
+            console.log("previous color" + previousColor); 
+
+            document.body.setAttribute("bgcolor", color); 
+        }
+        fnAccessValues();
+    </script>
+
+<button onclick="fnGetAttributes()">FnTestAttributes</button>
+
+<button onmouseover="changeBGColor('blue')">Blue</button> | 
+<button onmouseover="changeBGColor('orange')">Orange</button> | 
+<button onmouseover="changeBGColor('cyan')">Cyan</button> | 
+<button 
+onmouseout="javascript:document.body.setAttribute('bgcolor', previousColor)" 
+onmouseover="changeBGColor('lightblue')">Light Blue </button> | 
+
+<button onmouseover="javascript:document.body.setAttribute('bgcolor', 'yellow')">Yellow </button> | 
+
+
+
+</body>
+
+</html>

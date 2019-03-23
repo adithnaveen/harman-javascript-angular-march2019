@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript">
+    pid = 222; 
+        function Person(pid, name){
+            this.pid = pid; 
+            this.name = name; 
+            
+            // private 
+            this.myPrivateMethod = function(){
+                val = 333; 
+                console.log("This is private method"); 
+            }
+
+            // privelleged 
+            this.checkAndGive = function (role){
+                console.log("Check and Give called with Role " + role); 
+                this.name = "New Name"; 
+                this.myPrivateMethod();
+                console.log("val is " + val); 
+            }
+        }
+        // prototype 
+        Person.prototype.getAccess = function(role){
+            console.log("Role " + role +" is accessing "); 
+            this.myPrivateMethod();
+        }
+
+        Person.prototype.display = function (){
+            console.log("Person Id " + this.pid); 
+            console.log("Person Name " + this.name); 
+        }
+
+        Person.prototype.display1  = function (){
+            // will give an error 
+            console.log(pid);     
+        }
+
+    </script>
+</head>
+<body>
+    
+    <script type="text/javascript">
+        p = new Person(101, "Raghu"); 
+        p.display(); 
+        // p.display1(); 
+      //   p.myPrivateMethod();
+    //   p.getAccess("Admin");
+        p.checkAndGive();
+        p.display(); 
+    </script>
+</body>
+</html>

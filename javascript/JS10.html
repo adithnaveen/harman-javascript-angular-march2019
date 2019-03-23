@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript">
+        function fnChangeText(){
+            var _myPara = document.body.getElementsByTagName('p')[0]; 
+
+            // create elements 
+            var boldPara = document.createElement("b"); 
+            var textPara = document.createTextNode("Hello World!!!"); 
+
+            // <b>Hello World!!!</b>
+            boldPara.appendChild(textPara); 
+
+            // insert after 
+           //  document.body.appendChild(boldPara); 
+            
+           // insert before 
+            //document.body.insertBefore(boldPara,_myPara); 
+
+            // replace 
+            document.body.replaceChild(boldPara,_myPara); 
+
+
+        }
+    </script>
+</head>
+<body>
+    <p>Welcome to JavaScript</p>
+    
+    <button onclick="fnChangeText()">change Text</button>
+
+    <button onclick="javascript:history.forward()">Forward</button>
+
+    <a href="JS13.html">click me</a>
+</body>
+</html>

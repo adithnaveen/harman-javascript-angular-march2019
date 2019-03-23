@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript">
+        function getData(){
+            var name = prompt("Enter Your Name"); 
+
+            var existingDiv = document.getElementById("myDiv"); 
+
+            existingDiv.innerHTML = "<b>Your Name is " + name +"</b>";
+            
+            existingDiv.setAttribute("style", 'background-color:red;'); 
+            existingDiv.setAttribute("align", "center"); 
+        }
+    </script>
+</head>
+<body>
+
+    <p>This sample Para</p>
+    <p>This sample Para</p>
+    <div id="myDiv"></div>
+    <p>This sample Para</p>
+    <p>This sample Para</p>
+    <p>This sample Para</p>
+    <p>This sample Para</p>
+
+    <button onclick="getData()">Get Data</button>
+</body>
+</html>

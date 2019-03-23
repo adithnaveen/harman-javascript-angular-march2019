@@ -1,0 +1,66 @@
+/* this is comment */ 
+
+p{
+    font-family: Arial, Helvetica, sans-serif; 
+    background-color: aqua; 
+    text-align: center; 
+    text-transform: uppercase; 
+
+}
+
+p.mypara{
+    background-color: beige; 
+}
+
+.customPara{
+    text-transform: capitalize; 
+}
+
+#allHeaders{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    text-transform: uppercase; 
+}
+
+h1{
+    text-decoration: brown; 
+    text-indent: 50pt; 
+    color: blue; 
+    text-align: justify; 
+    font-size: 240%; 
+    font-style: italic; 
+    border: 5px dashed black; 
+}
+
+body{
+    background-image: url("./images/microsoft.jpg"); 
+    background-repeat: repeat-y;
+}
+
+table{
+    border: 3px solid black; 
+}
+
+tr, td{
+    border: 2px dashed blue;
+}
+
+a:link{
+    color: blueviolet; 
+    text-decoration: underline; 
+    background-color: cyan; 
+}
+
+a:active{
+    background-color: blue; 
+    color: azure; 
+}
+
+a:visited{
+    color: red; 
+}
+
+a:hover{
+    text-transform: uppercase; 
+    color:green; 
+    font-size: 200%; 
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript">
+        function setStatus(value ){
+            status=value; 
+            console.log("set status " + value); 
+        }    
+
+        function sayBye(){
+            alert("Bye....")
+            console.log("bye... "); 
+        }
+
+        function whichButton(event){
+            console.log("mouse down called.. ")
+            
+            if(event.button==2){
+                alert("Sorry right click disabled"); 
+                return; 
+            }
+            
+            alert("you clicked... "); 
+        }
+
+        function fnCallBack(){
+            d = new Date(); 
+
+            hrs = d.getHours(); 
+            mins = d.getMinutes(); 
+            secs = d.getSeconds(); 
+
+            document.getElementById("myDiv").innerHTML = hrs +":" +mins +":"+
+                secs; 
+
+            setTimeout('fnCallBack()', 1000); 
+        }
+
+
+        // check this 
+        function openWindow(){
+            var mywindow = open("JS07.html","myjsfile",
+            "toolbar=yes,status=no,resizable=no,height=500,width=700"); 
+
+            mywindow.moveTo(50, 100); 
+
+        }
+
+    </script>
+</head>
+<body onload="fnCallBack()"
+        onblur="setStatus('You are out of Page')"
+        onfocus="setStatus('You are in the page')"  >
+
+        <div id="myDiv"></div>
+        
+        <H2>Java Script status example </H2>
+
+        <button onmousedown="whichButton(event)">Click Me</button>
+
+        <button onclick="openWindow()">Open Window</button>
+
+        <a href="http://yahoo.com" target="_blank"></a>
+
+        <a href="JS14.html">click me</a>
+</body>
+</html>

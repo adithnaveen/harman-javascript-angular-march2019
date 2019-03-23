@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript">
+        function checkName(){
+            name = document.loginForm.uname.value; 
+            if(name.length < 6){
+                document.getElementById("errMsg").innerHTML 
+                    ="Name should be minimum 6 chars"; 
+            }
+        }
+
+    </script>
+</head>
+<body>
+    
+    <form name="loginForm">
+
+        Enter User Name : <input type="text" name="uname"
+            onfocus="javascript:document.getElementById('errMsg').innerHTML='';"
+        onblur="checkName()" />
+        <div id="errMsg"></div>
+
+    </form>
+</body>
+</html>

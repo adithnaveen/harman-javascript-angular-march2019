@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript">
+
+        onerror=handleError; 
+
+        // these values are injected by javascript 
+        function handleError(msg, url, lineno){
+            document.write("Error Occured in page with Message " + 
+                msg +", url " +url +", line number " + lineno ); 
+        }
+
+        function fnTest(){
+            try{
+                allert("hi"); 
+            } catch(err){
+                document.write("Some Error Occured " + err); 
+            }
+        }
+
+        function fnTest1(){
+         
+            allert("hi"); 
+         
+            
+        }
+
+        function fnMyBusinessLogic(){
+            myval = parseInt(prompt("Enter a number between 1 to 100")); 
+
+            try{
+                if(myval>100){
+                    throw "toohigh"; 
+                }else if(myval<1){
+                    throw "toolow"; 
+                }else {
+                    document.write("you value is correct " + myval)
+                }
+            }catch(err){
+                if(err == "toohigh"){
+                    document.write("Sorry Values enterd is high, not processed "); 
+                    throw new Error("again"); 
+                }else if(err =="toolow"){
+                    document.write("Sorry Values enterd is loo, not processed ")
+                }else {
+
+                }
+            }
+
+            document.write("you business logic just follows... "); 
+        }
+    </script>
+</head>
+<body>
+        <button onclick="fnTest()">Click Me</button>
+        <button onclick="fnTest1()">Click Me1</button>
+        <button onclick="fnMyBusinessLogic()">Call fnMyBusinessLogic</button>
+</body>
+</html>

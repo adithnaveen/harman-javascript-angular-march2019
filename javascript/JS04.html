@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <script type="text/javascript">
+    // the last display will be loaded in the stack 
+        function display(val){
+            console.log("display invoked with 1 arg"); 
+        }    
+
+        function display(val1, val2){
+            console.log("Display called with 2 args"); 
+        }
+
+        function display(){
+            console.log("display called with " + display.arguments.length +" arguments" ) ; 
+
+            for(i=0; i< display.arguments.length; i++){
+                console.log(display.arguments[i]); 
+            }
+        }
+    </script>
+    
+</head>
+<body>
+    <!-- you can call here with with script tag or on any event 
+        like on click etc -->
+
+    <script type="text/javascript">
+        display(2);
+        display(2, 3);
+        display(2,3,4,5,6,7);
+
+    </script>
+</body>
+</html>

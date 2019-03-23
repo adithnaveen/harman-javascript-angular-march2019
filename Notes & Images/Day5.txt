@@ -1,0 +1,27 @@
+-------------------------------------------------------------------------
+Building and deploying 
+-------------------------------------------------------------------------
+1. show the folder structure 
+2. open terminal goto folder 
+3. ng serve -> show the sizes 
+4. dev console ->  network -> files are available but not physically 
+5. see the source code by right clicking there is lot of script injection 
+	which takes places 
+6.  ( see in package.json ng build, you can also get --help) 
+7. when you do dir in the project directory, you will not see dist folder 
+8. ng build --prod --aot (aot we will talk in next session ) 
+9. and now see the size 
+10. we can look for surge.sh 
+11. npm i -g surge 
+12. surge --help (explain the options of login and logout) 
+13. > surge <enter> it will ask for username and password 
+	if it is not there it will create if there it will login 
+	it will ask for project you have to give dist folder 
+	ex: <path>\phonebook-app
+14. 
+-------------------------------------------------------------------------
+// so that the vendor.js file is generate 
+> ng build 
+npm i source-map-explorer 
+> source-map-explorer .\dist\phonebook-app\vendor.js 
+this will open a web browser 

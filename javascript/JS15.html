@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript">
+        function fnGetDetails()
+        {
+            document.write("<br> App Code " + navigator.appCodeName); 
+            document.write("<br> Browser Name " + navigator.appName); 
+            document.write("<br> Platform " + navigator.platform); 
+            document.write("<br> User Agent " + navigator.userAgent); 
+            document.write("<br > Cookies Enabled " + navigator.cookieEnabled); 
+
+            document.write("<br> " + navigator.mimeTypes); 
+            if(navigator.mimeTypes){
+                for(temp in navigator.mimeTypes){
+                    document.write("<br>"  + navigator.mimeTypes[temp].description); 
+                    console.log(navigator.mimeTypes[temp]); 
+                }
+                navigator.onLine
+            }
+
+
+        }    
+    </script>
+</head>
+<body>
+    <script type="text/javascript">
+        fnGetDetails();
+    </script>
+</body>
+</html>

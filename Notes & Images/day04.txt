@@ -1,0 +1,123 @@
+counter 
+	
+counter.component.ts 
+	selecter is the logical name which you give 
+		templage-url="counter.component.html"
+		app-counter 
+		
+counter.component.html
+counter.component.css
+
+
+counter1 
+counter.component.ts 
+	selecter is the logical name which you give 
+		templage-url="counter1.component.html"
+		app-counter1
+		
+counter1.component.html
+counter1.component.css
+
+
+app.module.ts  
+app-counter 
+app-counter1 
+
+
+
+
+
+
+> npm install -g @angular/cli
+
+
+
+to install bootstrap 
+> npm install bootstrap
+
+> ng serve -o 
+
+> ng generate component components/header 
+> ng g c components/footer --spec=false 
+> ng g c components/counter --skipTests 
+
+
+> ng g c components/ngforof --skipTests
+> ng g c components/switch-demo --skipTests
+
+> ng g c components/custom-directive --skipTests
+> ng g d directives/box 
+
+
+
+
+
+
+
+
+
+application 
+data from external web server 
+json-server 
+
+{
+	//// ??? 
+}
+
+<any> 
+bean class -> Contact 
+
+routers 
+
+{{ name | fullname}} 
+{{age | year}}
+
+we dont want to keep the data in component 
+	service layer 
+
+angular form template based + validation 
+
+deploy 
+
+source inspection 
+
+
+
+
+> ng new phonebook-app 
+> npm i bootstrap 
+> ng g c components/header --skipTests
+> ng g c components/sidebar  --skipTests
+> ng g c components/home --skipTests
+> ng g c components/contact-details --skipTests
+> ng g c components/contact-list --skipTests
+
+> ng generate class model/contact 
+
+
+
+
+
+
+
+
+
+
+
+https://angularfirebase.com/lessons/methods-for-debugging-an-angular-application/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

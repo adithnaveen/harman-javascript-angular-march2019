@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript">
+    // global variable 
+        total = 100; 
+
+        function fnFirst(){
+            // this shall be global variable 
+            x = 200; 
+
+            // local reference 
+            var y = 300; 
+
+            console.log("Additon of x and y " + (x + y)); 
+
+        }
+        function fnSecond(){
+            fnFirst(); 
+            z = 300; 
+            console.log("Total is " + total); 
+            console.log("x value from fnFirst " + x )
+            console.log("y value from fnScone " + y)
+
+        }
+    </script>
+</head>
+<body>
+    <button onclick="fnSecond()">Invoke Second</button>
+</body>
+</html>

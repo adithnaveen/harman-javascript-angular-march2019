@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <script type="text/javascript">
+
+        function fnShowInfo(){
+            console.log(window.location.protocol); 
+
+            switch (window.location.protocol) {
+                case 'http:':
+                        alert("Request from HTTP"); 
+                    break;
+            
+                case 'file:':
+                    alert("Request from File(Local System) ")
+                break;
+                    
+                case 'ftp:':
+                    alert("Request from FTP")
+                    break;
+            
+                default:
+                    alert("unknown resource request"); 
+                    break;
+            }
+        }
+        
+        function fnMouseOver(){
+            document.myimg.src ="./images/runcheetah.jpg"; 
+        }
+
+        function fnMouseOut(){
+            document.myimg.src="./images/standcheetah.jpg"; 
+        }
+
+        function fnGoBack(){
+            history.back(); 
+        }
+
+        function fnGo(){
+            
+            // either +ve or -ve 
+            history.go(parseInt(prompt("Go back level", "0"))); 
+        }
+    </script>
+</head>
+<body ondblclick="location.href='JS10.html'">
+    <h1>Welcome</h1>
+
+    <button onclick="fnShowInfo()">Click Me</button>
+
+
+    <img src="./images/standcheetah.jpg" alt="" height="100" width="100"
+        border="2"
+        name="myimg"
+        onmouseover="fnMouseOver()"
+        onmouseout="fnMouseOut()">
+
+<hr />
+
+<button onclick="fnGoBack()">GoBack</button>
+<button onclick="javascript:alert(history.length)">GetLenght</button>
+<button onclick="fnGo()">Go Levels</button>
+</body>
+</html>

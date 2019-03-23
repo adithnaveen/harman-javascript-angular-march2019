@@ -1,0 +1,54 @@
+<!-- program to show working of javascript with prompt -->
+
+<!DOCTYPE html>
+<html>
+<head>
+        <script type="text/javascript">
+            function fnCheckForVote(){
+                var name = prompt("Enter Your Name "); 
+                var age = prompt("Enter Your age ", 18); 
+
+                if(age >=18){
+                    console.log("Congrats " + name 
+                        +" you can vote"); 
+                }else{
+                    console.log("Hey "+ name +
+                        " you have to wait " 
+                        + (18-age) +" Years"); 
+                }
+
+
+            }    
+
+            function fnCheckVote(){
+                var name = document.getElementById("name").value; 
+                var age = parseInt(document.getElementById("age").value); 
+
+                var output; 
+                if(age >=18){
+                    output = "Congrats " + name 
+                        +" you can vote"; 
+                }else{
+                    output = "Hey "+ name +
+                        " you have to wait " 
+                        + (18-age) +" Years to Vote"; 
+                }
+                document.getElementById("myDiv").innerHTML  = output; 
+        }
+        </script>
+</head>
+<body>
+    <h2>Click to check for Voting </h2>    
+    <button onclick="fnCheckForVote()">click Me</button>
+
+    <hr /> 
+
+    Enter Your Name <input type="text" name="name" id="name" />
+    Enter Your age <input type="text" name="age" id="age"
+        onblur="fnCheckVote()" />
+
+    <div id="myDiv" style="background-color:cyan; ">
+
+    </div>
+</body>
+</html>

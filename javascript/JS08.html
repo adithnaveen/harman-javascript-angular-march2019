@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript">
+        function fnArrayEx(){
+            arr = new Array(3);
+            arr[0] = 10; 
+            arr[1] = 20; 
+            arr[2] = 30; 
+
+            document.write("<hr> Array Content is " + arr); 
+            document.write("<hr> Array @1 is " + arr[1]); 
+            document.write("<hr>Number of Elements " + arr.length); 
+
+            for(i=0; i<arr.length; i++){
+                document.write("<br >Element @ " + i + " is " + arr[i]); 
+            }
+        }
+
+        // hetrogeneous array with for each 
+        function fnArrayHetro(){
+            arr = new Array(3); 
+            arr[0] = "hello"; 
+            arr[1] = true; 
+            arr[2] = 111; 
+            arr[3] = 34.5; 
+
+            document.write("Displaying mixed array"); 
+            for(temp in arr){
+                document.write("<br/>"+arr[temp])
+            }
+        }
+
+        function myWeek(){
+            week = new Array("Mon", "Tue", "Wed"); 
+            document.write("<br />Contents of array " + week); 
+
+            // add element at last 
+            week.push("Thu"); 
+            document.write("<br />After adding thu -> " +  week); 
+
+            week.push("Fri", "Sat"); 
+            document.write("<br />Added two element -> " + week); 
+
+            // remove last element 
+            week.pop(); 
+            document.write("<br />After 1 pop  -> " + week); 
+
+            // put element at start 
+            week.unshift("Holiday"); 
+            document.write("<br />After unshift -> " +week); 
+            
+            // removing 1 element from front 
+            week.shift(); 
+            document.write("<br />after shift -> " + week); 
+
+        }
+
+
+        function fnSplice(){
+            week = new Array("Mon", "Tue", "Wed"); 
+            document.write("<br />Contents of array " + week); 
+
+            // splice to add element/s 
+            week.splice(0,0,"Sunday"); 
+            document.write("<br />Contents of array " + week); 
+
+            // Sunday, Mon, Tue, Wed 
+            week.splice(2,1); 
+            document.write("<br />Contents of array " + week); 
+
+            week.splice(week.length, 0, "Thu", "Fri"); 
+            document.write("<br />Contents of array " + week); 
+
+        }
+
+        function fnCalcSum(){
+
+            sum = 0; 
+            do{
+                var value = parseInt(prompt("Enter a number, 0<zero> to stop", "0"))
+                    sum += value; 
+            }while(value!=0); 
+
+            document.write("Sum is " + sum); 
+        }
+
+        function fnCalcSum1(){
+            sum = 0; 
+            do{
+                var value = parseInt(prompt("Enter a number")); 
+                    sum += value; 
+
+            }while(confirm("Do you want to continue"))
+
+            document.write("Sum is " + sum); 
+        }
+
+    </script>
+</head>
+<body>
+
+    <button onclick="fnArrayEx()">Call FnArray </button> 
+    <button onclick="fnArrayHetro()">Call Mix Array</button>
+    <button onclick="myWeek()">Call MyWeek </button>
+    <button onclick="fnSplice()">Call fnSplice</button>
+    <br >
+    <button onclick="fnCalcSum()">Function Calc Sum</button>
+    <button onclick="fnCalcSum1()">Function Calc Sum Confirm</button>
+</body>
+</html>
